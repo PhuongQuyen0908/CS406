@@ -14,6 +14,7 @@ uploaded_file = st.file_uploader(" Tải lên ảnh màu", type=["jpg", "jpeg", 
 if uploaded_file is not None:
     # Đọc ảnh
     image = Image.open(uploaded_file)
+    image = image.convert("RGB")
     img_array = np.array(image)
 
     # Chuyển từ RGB sang BGR cho OpenCV
